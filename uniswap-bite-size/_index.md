@@ -47,4 +47,5 @@ How does Uniswap’s pricing mechanism work ?
 Who provides liquidity to the system ?
 Why would someone provide liquidity to the system ?
 How does the system represents the liquidity ?
-etc..
+
+Can you provide liquidity with only 1 side of the pair?
