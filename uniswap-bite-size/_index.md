@@ -31,7 +31,7 @@ Looking at it from the traditional client-server architecture lens, bottom up.
 
 - Infrastructure? ✅
 
-
+[AMM]
 1. Background (Univ1 - Uni v3, some about AMMs)
 
 Uniswap v1 - 2018. can only pair ERC20-ETH. No token-to-token "directly". Can still be done in the same tx, but had to route through an ETH pair. 
@@ -40,6 +40,8 @@ Uni V3 defines [Range Orders](https://docs.uniswap.org/protocol/concepts/V3-over
 2. Actors
 3. Pricing
 
+
+"liquidity pool share" [source](https://uniswap.org/whitepaper.pdf)
 
 ## Questions that may arise?
 
