@@ -1,3 +1,7 @@
++++
+weight = 10
++++
+
 ## Agenda
 
 1. [What is Uniswap?](#what-is-uniswap)
@@ -108,12 +112,19 @@ Uniswap Governance has the right (but no obligation) to divert a percentage of s
 
 ## Background
 
-{{% fragment %}}Uniswap v1 - 2018.{{% /fragment %}}
-Can only pair ERC20-ETH. No token-to-token "directly". Can still be done in the same tx, but had to route through an ETH pair.
+{{% fragment %}} Uniswap v1 - 2018. {{% /fragment %}}
+{{% fragment %}} Can only pair ERC20-ETH. No token-to-token "directly". {{% /fragment %}}
+{{% fragment %}} Can still be done in the same tx, but had to route through an ETH pair. {{% /fragment %}}
 
+{{% fragment %}}
 Uni V3 defines [Range Orders](https://docs.uniswap.org/protocol/concepts/V3-overview/range-orders#buy-limit-orders), but in fact, it is still not a CLOB. [Its creators tout it](https://twitter.com/danrobinson/status/1504867385009852419?s=20&t=Gm0NAAlzU5Yt9huMjuSgcQ) as a hybrid between AMM and CLOB.
+{{% /fragment %}}
 
-"liquidity pool share" [source](https://uniswap.org/whitepaper.pdf)
+{{% fragment %}}
+When **market makers** add liquidity, they get a "liquidity pool share"<small><sup>[wp](https://uniswap.org/whitepaper.pdf)</sup></small> token.
+{{% /fragment %}}
+
+---
 
 ## Actors
 
