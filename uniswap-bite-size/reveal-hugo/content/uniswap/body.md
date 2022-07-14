@@ -1,56 +1,133 @@
-## What is Uniswap?
+## Agenda
 
-Uniswap is a [decentralized](#decentralised) automated market maker ([AMM](#background)) **protocol** that allows anyone to swap **token** A for token B
-
-<small>[source](https://mirror.xyz/roherrera.eth/BMg6IoBHO8fNuyvmAuSDqjWf3ur-YZEAsNyG-aA1f9Y) for the definition</small>
+1. [What is Uniswap?](#what-is-uniswap)
+1. [Background](#background)
+1. [Actors](#actors)
 
 ---
 
-### Decentralised
+## What is Uniswap?
 
+Uniswap is a [decentralized](#decentralised-12) automated market maker ([AMM](#background)) **protocol** that allows anyone to swap **token** A for token B
+
+<small>- roherrera.eth@[source](https://mirror.xyz/roherrera.eth/BMg6IoBHO8fNuyvmAuSDqjWf3ur-YZEAsNyG-aA1f9Y)</small>
+
+---
+
+### Decentralised (1/2)
+
+<small>
 > What does this mean? To what extent?
+</small>
 
-Looking at it from the traditional client-server architecture lens, bottom up.
+Bottom up approach, traditional client-server architecture lens:
 
-- Infrastructure? ✅
+{{% fragment %}}
 
-High number of nodes participating on the Ethereum mainnet, which host the system logic.
+- Infrastructure
 
-- Transaction processing? ✅
+  High number of nodes participating in p2p network. Nodes store records and host the system logic.
 
-Transaction logic is processed at the blockchain level, meaning multiple p2p clients execute the code and come to consensus.
+{{% /fragment %}}
 
-- User interface? 🆗
+{{< frag c="✅" >}}
 
-While Uniswap's official UI is hosted by a US company, anyone can run this frontend locally. The dApp code is OSS which makes it even easier. it has also been deployed to IPFS - only requires connection to a node.
+{{% fragment %}}
+
+- Transaction processing
+
+  Transaction logic is processed at the blockchain level, meaning multiple clients execute the code and come to consensus.
+
+{{% /fragment %}}
+
+{{< frag c="✅" >}}
+
+---
+
+### Decentralised (2/2)
+
+{{% fragment %}}
+
+- User interface
+
+  While Uniswap's official UI is hosted by a US company, anyone can run this frontend locally - the [dApp code is OSS](https://github.com/Uniswap/interface).
+
+  - UI has also been deployed to IPFS
+
+{{% /fragment %}}
+
+{{% fragment %}}
+
+Only requires connection to a node.
+
+{{% /fragment %}}
+
+{{< frag c="🆗" >}}
+
+---
 
 ### Beyond Decentralised
 
+{{% fragment %}}
+
 #### Permissionless
 
+<small>
 > What does this mean? To what extent?
+</small>
 
-Looking at it from the traditional client-server architecture lens, bottom up.
+{{% /fragment %}}
 
-- Who is allowed to participate? ✅
+{{% fragment %}}
 
-Any Ethereum account can perform swaps or provide liquidity
+- Who is allowed to participate?
+
+  Any Ethereum account can perform swaps or provide liquidity. ✅
+
+{{% /fragment %}}
+
+{{% fragment %}}
+
+#### Immutable
+
+No party is able to pause the contracts or reverse trade execution.
+
+{{% /fragment %}}
+
+{{% fragment %}}
+
+#### Governable
+
+Uniswap Governance has the right (but no obligation) to divert a percentage of swap fees
+
+{{% /fragment %}}
+
+---
 
 1. Background (Univ1 - Uni v3, some about AMMs)
 
 ## Background
 
-Uniswap v1 - 2018. can only pair ERC20-ETH. No token-to-token "directly". Can still be done in the same tx, but had to route through an ETH pair.
+{{% fragment %}}Uniswap v1 - 2018.{{% /fragment %}}
+Can only pair ERC20-ETH. No token-to-token "directly". Can still be done in the same tx, but had to route through an ETH pair.
 
-Uni V3 defines [Range Orders](https://docs.uniswap.org/protocol/concepts/V3-overview/range-orders#buy-limit-orders), but in fact, it is still not a CLOB. [Its creators tout it](https://twitter.com/danrobinson/status/1504867385009852419?s=20&t=Gm0NAAlzU5Yt9huMjuSgcQ) as a hybrid between AMM and CLOB. 2. Actors 3. Pricing
+Uni V3 defines [Range Orders](https://docs.uniswap.org/protocol/concepts/V3-overview/range-orders#buy-limit-orders), but in fact, it is still not a CLOB. [Its creators tout it](https://twitter.com/danrobinson/status/1504867385009852419?s=20&t=Gm0NAAlzU5Yt9huMjuSgcQ) as a hybrid between AMM and CLOB.
 
 "liquidity pool share" [source](https://uniswap.org/whitepaper.pdf)
+
+## Actors
+
+Who provides liquidity to the system ?
+Why would someone provide liquidity to the system ?
+
+2. Actors
+
+3. Pricing
 
 ## Questions that may arise?
 
 How does Uniswap’s pricing mechanism work ?
-Who provides liquidity to the system ?
-Why would someone provide liquidity to the system ?
+
 How does the system represents the liquidity ?
 
 Can you provide liquidity with only 1 side of the pair?
