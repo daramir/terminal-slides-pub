@@ -187,6 +187,8 @@ Who provides liquidity to the system ?
 
 ![Ecosystem participants](./uniswap-v2-eco-participants-a3e150f3c98a0b402c2063de3e160f2e.jpeg)
 
+<small>[source](https://docs.uniswap.org/protocol/V2/concepts/protocol-overview/ecosystem-participants)</small>
+
 <!-- Why would someone provide liquidity to the system ?: Point to docs, otherwise will overextend -->
 
 ---
