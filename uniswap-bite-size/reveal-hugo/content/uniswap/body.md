@@ -12,7 +12,7 @@ weight = 10
 
 ## What is Uniswap?
 
-Uniswap is a [decentralized](#decentralised-12) automated market maker ([AMM](#background)) **protocol** that allows anyone to swap **token** A for token B
+Uniswap is a [decentralized](#decentralised-12) automated market maker ([AMM](#background-1x)) **protocol** that allows anyone to swap **token** A for token B
 
 <small>- roherrera.eth@[source](https://mirror.xyz/roherrera.eth/BMg6IoBHO8fNuyvmAuSDqjWf3ur-YZEAsNyG-aA1f9Y)</small>
 
@@ -123,6 +123,57 @@ Uni V3 defines [Range Orders](https://docs.uniswap.org/protocol/concepts/V3-over
 {{% fragment %}}
 When **market makers** add liquidity, they get a "liquidity pool share"<small><sup>[wp](https://uniswap.org/whitepaper.pdf)</sup></small> token.
 {{% /fragment %}}
+
+---
+
+{{% section %}}
+
+## Background (1/x)
+
+1. **A**utomated **M**arket **M**aking
+1. **C**entralised **L**imit **O**rder **B**ook
+1. **R**equest **f**or **Q**uotation
+
+<br/><br/><br/>
+
+They're all types of exchanges.
+
+---
+
+### AMM, CLOB, what?
+
+{{% fragment index="2" %}} \2. **C**entralised **L**imit **O**rder **B**ook {{% /fragment %}}
+
+{{% fragment index="4" %}} Most commonly used exchange methodology. Collects orders from market makers and then publishes an aggregate order book. <br/>Examples: NYSE, CBOT, Coinbase, Binance. {{% /fragment %}}
+
+---
+
+### AMM, CLOB, what?
+
+{{% fragment index="1" %}} \1. **A**utomated **M**arket **M**aking {{% /fragment %}}
+
+{{% fragment index="5" %}} Mostly seen in research and prediction markets. Uniswap's innovation comes from developing a “constant function market making” system (CFMMs). More specifically a CPMM. (Yes, more terms!)<br/>Examples: Uniswap, Bancor, Curve. {{% /fragment %}}
+
+---
+
+### AMM, CLOB, what?
+
+{{% fragment index="3" %}} \3. **R**equest **f**or **Q**uotation {{% /fragment %}}
+
+{{% fragment index="7" %}} A taker initiates a transaction by querying a known set of market makers with a specific demand (e.g. “buy 10 ETH”) Taker receives a quote from each, and decides which (if any) to accept. <br/>Examples: Airswap, Kyber, 0x. {{% /fragment %}}
+
+---
+
+## Background (5/x)
+
+End of AMM/CPMM rabbit hole.
+
+Sources:
+
+- Hummingbot [blog](https://hummingbot.io/en/blog/2019-04-crypto-exchange-types)
+- "Constant Function Market Makers: DeFi’s “Zero to One” Innovation" [Medium article](https://medium.com/bollinger-investment-group/constant-function-market-makers-defis-zero-to-one-innovation-968f77022159)
+
+{{% /section %}}
 
 ---
 
