@@ -7,6 +7,10 @@ weight = 10
 1. [What is Uniswap?](#what-is-uniswap)
 1. [Background](#background)
 1. [Actors](#actors)
+1. [How does it work](#how-does-it-work)
+   1. Constant Product AMM
+   1. Pricing
+1. SwapRouter ABI
 
 ---
 
@@ -152,7 +156,7 @@ They're all types of exchanges.
 
 {{% fragment index="1" %}} \1. **A**utomated **M**arket **M**aking {{% /fragment %}}
 
-{{% fragment index="5" %}} Mostly seen in research and prediction markets. Uniswap's innovation comes from developing a “constant function market making” system (CFMMs). More specifically a CPMM. (Yes, more terms!)<br/>Examples: Uniswap, Bancor, Curve. {{% /fragment %}}
+{{% fragment index="5" %}} Mostly seen in research and prediction markets. Uniswap's innovation comes from developing a “constant function market making” system (CFMMs) - More specifically a CPMM. (Yes, more terms!)<br/>Examples: Uniswap, Bancor, Curve. {{% /fragment %}}
 
 ---
 
@@ -166,7 +170,7 @@ They're all types of exchanges.
 
 ## Background (5/x)
 
-End of AMM/CPMM rabbit hole.
+End of AMM intro.
 
 Sources:
 
@@ -180,11 +184,47 @@ Sources:
 ## Actors
 
 Who provides liquidity to the system ?
-Why would someone provide liquidity to the system ?
 
-2. Actors
+![Ecosystem participants](./uniswap-v2-eco-participants-a3e150f3c98a0b402c2063de3e160f2e.jpeg)
 
-3. Pricing
+<!-- Why would someone provide liquidity to the system ?: Point to docs, otherwise will overextend -->
+
+---
+
+{{< slide background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Raphael_School_of_Athens.jpg/2560px-Raphael_School_of_Athens.jpg" background-color="#000000" >}}
+
+## How does it work?
+
+<br/>
+
+### x\*y = k
+
+<br/><br/><br/><br/><br/><br/>
+
+---
+
+### Back to CPMM
+
+<!-- Displayed equations are wrapped in double-\$
+Inline equations like $E=mc^2$ are wrapped in single-\$ -->
+
+$${x}*{y} = {k}$$
+
+<div id="asdf" style="column-count: 2;">
+    
+Means that when a Liquidity pool is deployed, initial $k$ is set based on the amounts of $x$ and $y$ deposited.
+
+Liquidity providers (LP) will receive LP tokens to represent share.
+
+This also means that because the product needs to remain constant\*, the universe of prices will be the resulting curve.
+
+!["xy = k" curve](./big-CPMM-curve.png)
+
+</div>
+
+---
+
+### Pricing
 
 ## Questions that may arise?
 
