@@ -110,14 +110,14 @@ Uniswap Governance has the right (but no obligation) to divert a percentage of s
 
 1. Background (Univ1 - Uni v3, some about AMMs)
 
-## Background
+## Background (1/x)
 
 {{% fragment %}} Uniswap v1 - 2018. {{% /fragment %}}
 {{% fragment %}} Can only pair ERC20-ETH. No token-to-token "directly". {{% /fragment %}}
 {{% fragment %}} Can still be done in the same tx, but had to route through an ETH pair. {{% /fragment %}}
 
 {{% fragment %}}
-Uni V3 defines [Range Orders](https://docs.uniswap.org/protocol/concepts/V3-overview/range-orders#buy-limit-orders), but in fact, it is still not a CLOB. [Its creators tout it](https://twitter.com/danrobinson/status/1504867385009852419?s=20&t=Gm0NAAlzU5Yt9huMjuSgcQ) as a hybrid between AMM and CLOB.
+Uni V3 defines [Range Orders](https://docs.uniswap.org/protocol/concepts/V3-overview/range-orders#buy-limit-orders), but in fact, it is still not a **CLOB**. [Its creators tout it](https://twitter.com/danrobinson/status/1504867385009852419?s=20&t=Gm0NAAlzU5Yt9huMjuSgcQ) as a hybrid between AMM and CLOB.
 {{% /fragment %}}
 
 {{% fragment %}}
