@@ -5,7 +5,7 @@ weight = 10
 ## Agenda
 
 1. [What is Uniswap?](#what-is-uniswap)
-1. [Background](#background)
+1. [Background](#background-1x)
 1. [Actors](#actors)
 1. [How does it work](#how-does-it-work)
    1. Constant Product AMM
@@ -114,8 +114,6 @@ Uniswap Governance has the right (but no obligation) to divert a percentage of s
 
 ---
 
-1. Background (Univ1 - Uni v3, some about AMMs)
-
 ## Background (1/x)
 
 {{% fragment %}} Uniswap v1 - 2018. {{% /fragment %}}
@@ -134,7 +132,7 @@ When **market makers** add liquidity, they get a "liquidity pool share"<small><s
 
 {{% section %}}
 
-## Background (1/x)
+## Background (2/x)
 
 1. **A**utomated **M**arket **M**aking
 1. **C**entralised **L**imit **O**rder **B**ook
@@ -170,7 +168,7 @@ They're all types of exchanges.
 
 ---
 
-## Background (5/x)
+## Background (6/6)
 
 End of AMM intro.
 
