@@ -10,7 +10,9 @@ weight = 10
 1. [How does it work](#how-does-it-work)
    1. Constant Product AMM
    1. Pricing
+   1. Deposit with only one token
 1. SwapRouter ABI
+1. [Blockchain-native](#blockchain-native)
 
 ---
 
