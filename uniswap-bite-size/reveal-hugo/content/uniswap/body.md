@@ -11,7 +11,7 @@ weight = 10
    1. Constant Product AMM
    1. Pricing
    1. Deposit with only one token
-1. SwapRouter ABI
+1. [SwapRouter ABI](#swaprouter-abi)
 1. [Blockchain-native](#blockchain-native)
 
 ---
