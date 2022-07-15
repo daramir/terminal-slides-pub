@@ -216,9 +216,11 @@ $${x}*{y} = {k}$$
     
 Means that when a Liquidity pool is deployed, initial $k$ is set based on the amounts of $x$ and $y$ deposited.
 
-Liquidity providers (LP) will receive LP tokens to represent share.
+Liquidity providers (LP) will receive LP tokens to represent share in pool.
 
 This also means that because the product needs to remain constant\*, the universe of prices will be the resulting curve.
+
+<!-- Constant ... actually non-depletable -->
 
 !["xy = k" curve](./big-CPMM-curve.png)
 
@@ -226,9 +228,47 @@ This also means that because the product needs to remain constant\*, the univers
 
 ---
 
-### Pricing
+### Pricing (1/x)
 
-## Questions that may arise?
+![Trade in pair](./uni-v2-trade-2027cdc01fe7c448f60a5e7da34af9b9.jpeg)
+
+---
+
+### Pricing (2/x)
+
+- Spot (a.k.a Marginal, Mid) Price: The price represented by the status of the reserves.
+
+  $${P} = \frac{x}{y}$$
+
+- Execution Price: The average price for an executed trade. Below formula calculates how much of ${y}$ a trader will get, given input $\Delta{x}$
+
+  $${\Delta{y}} = {y}*(1-{f})\Delta{x} / ({x} + (1-{f})\Delta{x})$$
+  ${f}$ is the fee, which for Uni v2 sits at 0.3% for all pairs.
+
+---
+
+### Pricing (3/x)
+
+---
+
+---
+
+## SwapRouter ABI
+
+---
+
+## Blockchain-native
+
+### Flashswaps
+
+Withdraw up to the full reserves of any ERC20 token on Uniswap and **execute arbitrary logic** at no upfront cost, provided that by the end of the transaction you either:
+
+- pay for the withdrawn ERC20 tokens with the corresponding pair tokens
+- return the withdrawn ERC20 tokens along with a small fee
+
+---
+
+# THE END
 
 How does Uniswap’s pricing mechanism work ?
 
