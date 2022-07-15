@@ -249,11 +249,104 @@ This also means that because the product needs to remain constant\*, the univers
 
 ### Pricing (3/x)
 
+The most important line of code in Uniswap v2
+
+```solidity
+    uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));
+    uint balance1Adjusted = balance1.mul(1000).sub(amount1In.mul(3));
+    require(balance0Adjusted.mul(balance1Adjusted) >=
+            uint(_reserve0).mul(_reserve1).mul(1000**2),
+            'UniswapV2: K');
+```
+
+<small>https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2Pair.sol#L170-L185</small>
+
+If that assertion doesn't hold, the entire transaction gets rolled back.
+
 ---
+
+### Can I LP with only one token?
+
+Short answer is _yes_. But you will still have an LP share of the pool, which is denominated in reserves of token X and Y.
+
+---
+
+{{% section %}}
+
+### Math behind optimal swap to LP
+
+Let the two assets be asset $A$ and asset $B$, and let
+
+$$
+\begin{aligned}
+res_A & = \text{amount of asset $A$ in the $A$-$B$ Uniswap pool reserve,} \\\
+res_B & = \text{amount of asset $B$ in the $A$-$B$ Uniswap pool reserve,} \\\
+amt_A & = \text{amount of $A$ the user wants to supply optimally, and} \\\
+f     & = \text{swap fee (0.3\% for Uniswap).}\end{aligned}
+$$
+
+<br/><br/><br/><br/>
+<small>[source](https://blog.alphaventuredao.io/onesideduniswap) for this and next two slides</small>
+
+---
+
+### Optimal​ amount to swap
+
+**User's asset ratio = reserve's asset ratio**:The optimal $amt_A$ ($swapAmt_A$) should satisfy the equality constraint on user's asset ratio and reserve's asset ratio:
+
+$$
+\frac{amt_A - swapAmt_A}{res_A + swapAmt_A} = \frac{rcvAmt_B}{res'_B}.
+$$
+
+---
+
+After multiple substitutions of known variables ($rcvAmt_A$, $res'_B$, $f$), rearranging the equation and solving for a non-negative root results in:
+
+<small>
+$$
+swapAmt_A = \left\lfloor \frac{\lfloor \sqrt{(1997^2)*res_A^2 + 4 * 997 * 1000 * amt_A * res_A}\rfloor - 1997 * res_A}{2 * 997} \right\rfloor.
+$$
+</small>
+
+Because of Uniswap/DeFi/Ethereum composability, anyone can:
+
+- deploy a smart contract,
+- implement the formula above,
+- receive $amt_a$ fom the user,
+- perform swap step,
+- perform liquidity provision step
+
+Enabling liquidity provision in a single transaction.
+
+<small>⚡ [Zapper.Fi: Uniswap V2 Zap In 2 | Contract Code | Etherscan](https://etherscan.io/address/0x6d9893fa101cd2b1f8d1a12de3189ff7b80fdc10#code)</small>
+
+{{% /section %}}
 
 ---
 
 ## SwapRouter ABI
+
+ABI: Analog to the "OpenAPI" specification
+
+```json
+{
+  "inputs": [
+    { "internalType": "uint256", "name": "amountIn", "type": "uint256" },
+    { "internalType": "uint256", "name": "amountOutMin", "type": "uint256" },
+    { "internalType": "address[]", "name": "path", "type": "address[]" },
+    { "internalType": "address", "name": "to", "type": "address" },
+    { "internalType": "uint256", "name": "deadline", "type": "uint256" }
+  ],
+  "name": "swapExactTokensForTokens",
+  "outputs": [
+    { "internalType": "uint256[]", "name": "amounts", "type": "uint256[]" }
+  ],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}
+```
+
+<small>Interface defined in [Uniswap/v2-periphery "IUniswapV2Router01.sol" | GitHub](https://github.com/Uniswap/v2-periphery/blob/master/contracts/interfaces/IUniswapV2Router01.sol)</small>
 
 ---
 
@@ -269,9 +362,3 @@ Withdraw up to the full reserves of any ERC20 token on Uniswap and **execute arb
 ---
 
 # THE END
-
-How does Uniswap’s pricing mechanism work ?
-
-How does the system represents the liquidity ?
-
-Can you provide liquidity with only 1 side of the pair?
